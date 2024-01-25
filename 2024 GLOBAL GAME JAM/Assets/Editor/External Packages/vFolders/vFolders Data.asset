@@ -24,6 +24,13 @@ MonoBehaviour:
     - 69ce1bffccf9322438571d284fb8b3a2
     - 49c7d22562773c641986ef6e42836e91
     - a214ce1dc3413934c9ff9429344fe0d9
+    - 8525ec55422fbbf4faa63a18d608d465
+    - ccafdc97e8c9d4245a7bc07b1619ddf8
+    - 34c4e1dfe92fcc6468e8c91bfec5f6d2
+    - 0a279184b1a9a5f4ab81dac48c99d6b1
+    - ca0c5b6f2ec619b4ba382045b72e959d
+    - c6dc6635528ac394ea72e0ce47cc6355
+    - e227250432708284386a4eb748253bcb
     values:
     - colorIndex: 0
       iconNameOrGuid: Settings Icon
@@ -45,3 +52,17 @@ MonoBehaviour:
       iconNameOrGuid: Material Icon
     - colorIndex: 0
       iconNameOrGuid: Material Icon
+    - colorIndex: 0
+      iconNameOrGuid: SceneAsset Icon
+    - colorIndex: 0
+      iconNameOrGuid: Texture Icon
+    - colorIndex: 0
+      iconNameOrGuid: RawImage Icon
+    - colorIndex: 0
+      iconNameOrGuid: RawImage Icon
+    - colorIndex: 0
+      iconNameOrGuid: PrefabModel Icon
+    - colorIndex: 0
+      iconNameOrGuid: Terrain Icon
+    - colorIndex: 0
+      iconNameOrGuid: Shader Icon
