@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb9c12a8c6c949f7af83a3d238359d0, type: 3}
+  m_Name: vFolders Data
+  m_EditorClassIdentifier: 
+  folderDatas_byGuid:
+    keys:
+    - 9a7505c37c8f5344ab428156cae6d934
+    - dc1b50b0354a91540bba0477c157c049
+    - c15ca8c0a9b5f3341bc6a44897e8ed83
+    - 3ec24afdb127f7e448609faf6ab4b600
+    - 1504efece09a55d44ba1202c7f0b7d91
+    - ab3b40737cfaf0f44a8bc4537d26c88c
+    - 60da3b407ee9dbd4591e7f3c7488df86
+    - 69ce1bffccf9322438571d284fb8b3a2
+    - 49c7d22562773c641986ef6e42836e91
+    - a214ce1dc3413934c9ff9429344fe0d9
+    values:
+    - colorIndex: 0
+      iconNameOrGuid: Settings Icon
+    - colorIndex: 0
+      iconNameOrGuid: Prefab Icon
+    - colorIndex: 0
+      iconNameOrGuid: Prefab Icon
+    - colorIndex: 0
+      iconNameOrGuid: Prefab Icon
+    - colorIndex: 0
+      iconNameOrGuid: Material Icon
+    - colorIndex: 0
+      iconNameOrGuid: Material Icon
+    - colorIndex: 0
+      iconNameOrGuid: Material Icon
+    - colorIndex: 0
+      iconNameOrGuid: Material Icon
+    - colorIndex: 0
+      iconNameOrGuid: Material Icon
+    - colorIndex: 0
+      iconNameOrGuid: Material Icon
