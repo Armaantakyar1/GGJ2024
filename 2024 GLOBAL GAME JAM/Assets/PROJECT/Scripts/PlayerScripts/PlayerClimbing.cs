@@ -41,7 +41,7 @@ public class PlayerClimbing : MonoBehaviour
     private void Update()
     {
         if (desiredPosition == previousDesiredPosition && !timerReset) return;
-        else if(desiredPosition != previousDesiredPosition && timerReset)
+        else if(desiredPosition != previousDesiredPosition && !timerReset)
         {timer = 0;timerReset = true;}
 
         if(timer >= duration)
