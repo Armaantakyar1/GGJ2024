@@ -5,27 +5,29 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityRandom = UnityEngine.Random;
+using VInspector;
 
 
 public class PlayerClimbing : MonoBehaviour
 {
-
+    [Tab("Movement Info")]
     [SerializeField] float duration;
     [SerializeField] AnimationCurve moveCurve;
     [SerializeField] Vector2 desiredPosition;
     [SerializeField] float correctOffset;
     [SerializeField] float wrongOffset;
+    [SerializeField]Animator playerAnimator;
 
-    float timer;
-    Vector2 previousDesiredPosition;
-    bool timerReset;
+    [Tab("Debug Info")]
+    [SerializeField] float timer;
+    [SerializeField] Vector2 previousDesiredPosition;
+    [SerializeField] bool timerReset;
 
     private void Start()
     {
         previousDesiredPosition = transform.position;
         desiredPosition = transform.position;
     }
-
 
     public void ClimbUp()
     {
@@ -36,7 +38,6 @@ public class PlayerClimbing : MonoBehaviour
     {
         desiredPosition = new Vector2(desiredPosition.x, desiredPosition.y - correctOffset);
     }
-
 
     private void Update()
     {
@@ -58,13 +59,4 @@ public class PlayerClimbing : MonoBehaviour
             transform.position = Vector2.Lerp(previousDesiredPosition, desiredPosition, t);
         }
     }
-
-
-
-
-
-
-
-
-
 }
