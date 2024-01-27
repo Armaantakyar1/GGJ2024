@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] int minQueue = 3;
     [SerializeField] int maxQueue = 3;
+    [SerializeField] float maxWidth = 600f;
     List<GameKey> keyQueue = new();
     List<KeyCode> keyList = new();
     List<GameKey> closedKeyList = new();
@@ -47,11 +48,19 @@ public class PlayerInput : MonoBehaviour
 
     void SpawnKeys()
     {
-        float centerAlignmentOffset = -(keyQueue.Count * spriteOffset) / 2;
+        float totalSize = keyQueue.Count * 50;
+        float offset = spriteOffset;
+        float centerAlignmentOffset = ((totalSize * 2) + (keyQueue.Count * spriteOffset)) / 4; // FUCK
+        if (totalSize + (keyQueue.Count * spriteOffset) > maxWidth)
+        {
+            offset = (maxWidth - (keyQueue.Count * 50)) / keyQueue.Count;
+            centerAlignmentOffset = maxWidth / 4;
+        }
+            centerAlignmentOffset *= -1;
         for (int i = 0; i < keyQueue.Count; i++)
         {
             keyQueue[i].gameObject = Instantiate(keyPrefab, centerSpawnPosition);
-            keyQueue[i].gameObject.transform.position += new Vector3(centerAlignmentOffset + (i * spriteOffset) + (keyQueue[i].gameObject.GetComponent<RectTransform>().rect.width / 2), 0f, 0f);
+            keyQueue[i].gameObject.transform.position += new Vector3(centerAlignmentOffset + (i * offset) + (keyQueue[i].gameObject.GetComponent<RectTransform>().rect.width / 2), 0f, 0f);
             keyQueue[i].gameObject.GetComponent<Image>().sprite = keyQueue[i].baseSprite;
         }
     }
@@ -77,11 +86,16 @@ public class PlayerInput : MonoBehaviour
             if ((baseInputWindow / speedModifier) < timer || keyQueue.Count == 0)
             {
                 timer = 0;
+                foreach (var key in keyQueue)
+                {
+                    Destroy(key.gameObject);
+                }
                 foreach (var key in closedKeyList)
                 {
                     Destroy(key.gameObject); // Animation later?
                 }
                 closedKeyList.Clear();
+                keyQueue.Clear();
                 // Fail code here
             }
 
