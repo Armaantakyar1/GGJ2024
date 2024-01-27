@@ -124,7 +124,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &657973556
+--- !u!1 &686648421
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,27 +132,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 657973559}
-  - component: {fileID: 657973558}
-  - component: {fileID: 657973557}
+  - component: {fileID: 686648424}
+  - component: {fileID: 686648423}
+  - component: {fileID: 686648422}
   m_Layer: 0
-  m_Name: anvil1
+  m_Name: pig1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &657973557
+--- !u!95 &686648422
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657973556}
+  m_GameObject: {fileID: 686648421}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd190a44f76f2a14ebbd8bbad5a7c632, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31a1e3b6351999d46b6ec7a54407f1a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -163,13 +163,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!212 &657973558
+--- !u!212 &686648423
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657973556}
+  m_GameObject: {fileID: 686648421}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -204,27 +204,27 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 95fa40301ce63a549ae2c7f8bfe47024, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea79fef56c72e864f8461a6f70bc97c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.76, y: 4.98}
+  m_Size: {x: 6.38, y: 6.37}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &657973559
+--- !u!4 &686648424
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657973556}
+  m_GameObject: {fileID: 686648421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 797.029, y: 401.70493, z: -804.30945}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 456.48, y: -123.56, z: -4113.87}
+  m_LocalScale: {x: 0.85615575, y: 0.85615575, z: 0.85615575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
