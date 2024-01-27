@@ -18,7 +18,7 @@ public class PlayerDeath : MonoBehaviour
         if (player.transform.position.y <= Y_Threshold)
         {
             if(isKilled) return;
-            pleaseYouShouldDie?.Invoke();
+           
             isKilled = true;
             Invoke(nameof(GoPleaseDie), delayToDisable);
         }
@@ -27,6 +27,7 @@ public class PlayerDeath : MonoBehaviour
     void GoPleaseDie()
     {
         player.SetActive(false);
+        pleaseYouShouldDie?.Invoke();
     }
 
 }

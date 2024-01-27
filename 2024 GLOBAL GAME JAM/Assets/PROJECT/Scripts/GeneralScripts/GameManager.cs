@@ -56,16 +56,19 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void OnEnable() => PlayerDeath.pleaseYouShouldDie += TransitionToGameOverState;
+
+    private void OnDisable() => PlayerDeath.pleaseYouShouldDie -= TransitionToGameOverState;
+ 
+
     protected virtual void Start()
     {
-        StartGame();    
+        StartGame();
     }
 
     protected virtual void Update()
     {
         PlayGameState();
-        TransitionToGameOverState();
-        GameOver();
         TransitionToPauseState();
         PauseGameOrContinueGame();
         OnInputDisableGameUI(allowToDisableGameUI);
@@ -76,13 +79,14 @@ public class GameManager : MonoBehaviour
         GameIsStarting?.Invoke();
         DisableAllUI();
 
-        if (skipStartMenu)
+        if (!skipStartMenu)
         {
-            TransitionToPlayState();
+            EnableOrDisableUI(ref startMenu, true);
+            
             return false;
         }
+        TransitionToPlayState();
 
-        EnableOrDisableUI(ref startMenu, true);
         return true;
     }
 
@@ -119,6 +123,7 @@ public class GameManager : MonoBehaviour
     protected virtual void PauseGameOrContinueGame()
     {
         // later on this needs to have a customised condtion because mouse hover is not disabled
+        if (pauseMenu == null) return;
         if (IsCurrentState(PausedState) && !runOnce)
         {
             EnableOrDisableUI(ref pauseMenu, true);
@@ -147,16 +152,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    protected virtual bool TransitionToGameOverState()
+    protected virtual void  TransitionToGameOverState()
     {
-        if (IsCurrentState(GameOverState)) return false;
+        if (IsCurrentState(GameOverState)) return;
 
         if (IsCurrentState(PlayingState))
         {
-            // you have to inherit from this script and set a custom condtion to run game over function 
-            return true;
+            UpdateCurrentGameState(GameOverState);
+            GameOver();
         }
-        return false;
 
     }
     protected virtual bool GameOver()
@@ -189,29 +193,27 @@ public class GameManager : MonoBehaviour
         runOnce = false;
     }
 
-
     protected void EnableOrDisableUI(ref GameObject _menu, bool _enabled)
     {
+        if (_menu == null) return;
         _menu.SetActive(_enabled);
     }
 
     public void DisableAllUI()
     {
-        startMenu?.SetActive(false);
-        pauseMenu?.SetActive(false);
-        gameOverMenu?.SetActive(false);
-        //winMenu?.SetActive(false);
-        inGameUI?.SetActive(false);
+        if (startMenu != null) startMenu?.SetActive(false);
+        if (pauseMenu != null) pauseMenu?.SetActive(false);
+        if (gameOverMenu != null) gameOverMenu?.SetActive(false);
+        if (winMenu != null) winMenu?.SetActive(false);
+        if (inGameUI != null) inGameUI?.SetActive(false);
     }
 
     public void RestartGame(bool _skipStartScreen)
     {
-      
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         skipStartMenu = _skipStartScreen;
         UpdateCurrentGameState(StartState);
         Start();
-
     }
 
     public void QuitGame()
