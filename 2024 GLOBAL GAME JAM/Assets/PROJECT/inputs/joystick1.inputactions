@@ -1,0 +1,54 @@
+{
+    "name": "joystick1",
+    "maps": [
+        {
+            "name": "player1",
+            "id": "ab49b555-7bc4-49ff-9a14-64d7cab6b7d5",
+            "actions": [
+                {
+                    "name": "Key1",
+                    "type": "Button",
+                    "id": "0f0a9052-eec5-4979-92f1-0930b0203b02",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Key2",
+                    "type": "Button",
+                    "id": "566b4b18-b29b-4854-a093-17db43ad8d10",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cc7ea43d-85fc-4bf9-8f46-e742205ea87f",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Key1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b650dcea-28dd-4518-ae24-3060983fcf67",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Key2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
