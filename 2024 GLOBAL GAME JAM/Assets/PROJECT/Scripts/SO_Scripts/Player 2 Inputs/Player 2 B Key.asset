@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10be0d3354a2cb447824949b4133ad1c, type: 3}
   m_Name: Player 2 B Key
   m_EditorClassIdentifier: 
-  keybind: 351
-  keybindSprite: {fileID: 0}
+  keybind: 371
+  baseSprite: {fileID: 21300000, guid: 0723f33e08ea915408adfbfdad393481, type: 3}
+  activatedSprite: {fileID: 21300000, guid: 3fa555332fa74914abac6524ab69cfd1, type: 3}
