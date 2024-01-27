@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] Key[] keys;
     [SerializeField] GameObject keyPrefab;
     [SerializeField] Image fillBar;
+    [SerializeField] Sprite wrongSprite;
 
     [SerializeField] Transform centerSpawnPosition;
     [SerializeField] float spriteOffset;
@@ -50,7 +51,7 @@ public class PlayerInput : MonoBehaviour
         for (int i = 0; i < keyQueue.Count; i++)
         {
             keyQueue[i].gameObject = Instantiate(keyPrefab, centerSpawnPosition);
-            keyQueue[i].gameObject.transform.position += new Vector3(centerAlignmentOffset + (i * spriteOffset), 0f, 0f);
+            keyQueue[i].gameObject.transform.position += new Vector3(centerAlignmentOffset + (i * spriteOffset) + (keyQueue[i].gameObject.GetComponent<RectTransform>().rect.width / 2), 0f, 0f);
             keyQueue[i].gameObject.GetComponent<Image>().sprite = keyQueue[i].baseSprite;
         }
     }
@@ -106,6 +107,7 @@ public class PlayerInput : MonoBehaviour
         }
         else if (currentKey != null && OtherInputsPressed())
         {
+            keyQueue[0].gameObject.GetComponent<Image>().sprite = wrongSprite;
             Dequeue();
             currentKey = null;
             speedModifier -= speedModifier * speedChangeModifier;
