@@ -5,5 +5,18 @@ using UnityEngine.UI;
 public class Key : ScriptableObject
 {
     public KeyCode keybind;
-    public Image keybindSprite;
+    public Sprite keybindSprite;
+}
+
+public class GameKey
+{
+    public KeyCode keybind;
+    public Sprite keybindSprite;
+    public GameObject gameObject;
+
+    public GameKey(Key key)
+    {
+        this.keybind = key.keybind;
+        this.keybindSprite = key.keybindSprite;
+    }
 }
