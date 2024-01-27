@@ -5,18 +5,21 @@ using UnityEngine.UI;
 public class Key : ScriptableObject
 {
     public KeyCode keybind;
-    public Sprite keybindSprite;
+    public Sprite baseSprite;
+    public Sprite activatedSprite;
 }
 
 public class GameKey
 {
     public KeyCode keybind;
-    public Sprite keybindSprite;
+    public Sprite baseSprite;
+    public Sprite activatedSprite;
     public GameObject gameObject;
 
     public GameKey(Key key)
     {
         this.keybind = key.keybind;
-        this.keybindSprite = key.keybindSprite;
+        this.baseSprite = key.baseSprite;
+        this.activatedSprite = key.activatedSprite;
     }
 }
