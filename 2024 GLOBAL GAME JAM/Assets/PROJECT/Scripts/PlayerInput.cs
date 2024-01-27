@@ -5,21 +5,31 @@ using System.Collections;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] Key[] keys;
+    [SerializeField] GameObject keyPrefab;
     [SerializeField] Transform startPos;
     [SerializeField] Transform endPos;
     [SerializeField] float baseInputWindow = 1f;
     [SerializeField] int minQueue = 3;
     [SerializeField] int maxQueue = 3;
     float speedModifier = 1f;
-    Queue<Key> keyQueue = new();
-    Key currentKey;
+    Queue<GameKey> keyQueue = new();
+    GameKey currentKey;
 
     void AddToQueue()
     {
         int queueSize = Random.Range(minQueue, maxQueue);
         for (int i = 0; i < queueSize; i++)
         {
-            keyQueue.Enqueue(keys[Random.Range(0, keys.Length)]);
+            GameKey newKey = new(keys[Random.Range(0, keys.Length)]);
+            keyQueue.Enqueue(newKey);
+        }
+    }
+
+    void SpawnKeys()
+    {
+        foreach (var key in keyQueue)
+        {
+            
         }
     }
 
