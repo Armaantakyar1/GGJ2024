@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player1 B Key
   m_EditorClassIdentifier: 
   keybind: 331
-  keybindSprite: {fileID: 0}
+  baseSprite: {fileID: 21300000, guid: 0723f33e08ea915408adfbfdad393481, type: 3}
+  activatedSprite: {fileID: 21300000, guid: 3fa555332fa74914abac6524ab69cfd1, type: 3}
