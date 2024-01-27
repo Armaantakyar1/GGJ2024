@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10be0d3354a2cb447824949b4133ad1c, type: 3}
-  m_Name: Player1 Y Key
+  m_Name: Player 1 RB Key
   m_EditorClassIdentifier: 
-  keybind: 333
-  baseSprite: {fileID: 21300000, guid: 3938d41c75067434f80a81d8a1dca596, type: 3}
-  activatedSprite: {fileID: 21300000, guid: 87ca8b78980ff4949b125858571d150a, type: 3}
+  keybind: 335
+  keybindSprite: {fileID: 0}
