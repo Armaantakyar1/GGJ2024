@@ -39,6 +39,11 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
+       
+    }
+
+    private void OnEnable()
+    {
         foreach (var key in keys)
         {
             keyList.Add(key.keybind);
