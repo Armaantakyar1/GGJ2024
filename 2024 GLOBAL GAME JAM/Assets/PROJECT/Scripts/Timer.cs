@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
     float timeRemaining;
     TMP_Text textMesh;
 
+    public static Action YouLostBitch;
+
     void Start()
     {
         textMesh = GetComponent<TMP_Text>();
@@ -26,6 +28,7 @@ public class Timer : MonoBehaviour
             timeRemaining = 0;
             // Handle timer completion here
             Debug.Log("Timer finished!");
+            YouLostBitch?.Invoke();
         }
 
         // Update the text mesh
