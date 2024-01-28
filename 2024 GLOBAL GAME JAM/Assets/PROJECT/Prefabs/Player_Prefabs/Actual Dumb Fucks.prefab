@@ -108,6 +108,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 04c593b972cfeaf46855261bfb1f921e, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 06a8cfb2b8246664ebaee4c40654093c, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 75e758d79392d0a46b6215f9b76a54a2, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[3]
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a9825ef14d546f46bc2472a07b9bf3f, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[4]
+      value: 
+      objectReference: {fileID: 7400000, guid: 5b4f5dfbd1841d346b804d1d4e502f60, type: 2}
     - target: {fileID: 3247665002232783334, guid: dfa66f4676cd6a84095134c6bdd4804b,
         type: 3}
       propertyPath: m_Name
@@ -188,6 +218,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 04c593b972cfeaf46855261bfb1f921e, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 06a8cfb2b8246664ebaee4c40654093c, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 75e758d79392d0a46b6215f9b76a54a2, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[3]
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a9825ef14d546f46bc2472a07b9bf3f, type: 2}
+    - target: {fileID: 3247665002232783333, guid: dfa66f4676cd6a84095134c6bdd4804b,
+        type: 3}
+      propertyPath: bonks.Array.data[4]
+      value: 
+      objectReference: {fileID: 7400000, guid: 5b4f5dfbd1841d346b804d1d4e502f60, type: 2}
     - target: {fileID: 3247665002232783334, guid: dfa66f4676cd6a84095134c6bdd4804b,
         type: 3}
       propertyPath: m_Name

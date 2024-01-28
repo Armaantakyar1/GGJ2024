@@ -28,6 +28,7 @@ public class PlayerClimbing : MonoBehaviour
     [SerializeField] Animator playerAnimator;
     [SerializeField] AnimationClip idleClip;
     [SerializeField] AnimationClip climbClip;
+    [SerializeField] AnimationClip[] bonks;
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class PlayerClimbing : MonoBehaviour
     {
         if (player != playerType) return;
         desiredPosition = new Vector3(desiredPosition.x, desiredPosition.y - correctOffset,transform.position.z);
-        playerAnimator.Play(idleClip.name);
+        playerAnimator.Play(bonks[UnityEngine.Random.Range(0, bonks.Length)].name);
     }
 
     private void Update()
