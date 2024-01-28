@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3346361852550076654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3346361852550076655}
+  - component: {fileID: 3346361852550076652}
+  m_Layer: 0
+  m_Name: Player2 input handling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3346361852550076655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346361852550076654}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -669, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3346361852550076652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346361852550076654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a56c5392042354bb67334235e85aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys:
+  - {fileID: 11400000, guid: c38bb6697fa27f54da7bba23ea905c08, type: 2}
+  - {fileID: 11400000, guid: 20f1562f716ed2c4992e822a0adc99b9, type: 2}
+  - {fileID: 11400000, guid: b694db59e3106d04985fc50653f44988, type: 2}
+  - {fileID: 11400000, guid: 76a50e4ea760727429c0afe3acff13f6, type: 2}
+  keyPrefab: {fileID: 0}
+  fillBar: {fileID: 0}
+  wrongSprite: {fileID: 21300000, guid: 546589f6c4c3ffa4f99d35cf043fc00f, type: 3}
+  centerSpawnPosition: {fileID: 3346361852550076655}
+  spriteOffset: 100
+  baseInputWindow: 10
+  speedChangeModifier: 0.1
+  speedModifier: 1
+  minQueue: 3
+  maxQueue: 3
+  playerType: Player2

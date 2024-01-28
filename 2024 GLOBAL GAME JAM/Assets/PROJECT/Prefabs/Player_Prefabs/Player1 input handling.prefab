@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2032143042020365382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2032143042020365380}
+  - component: {fileID: 2032143042020365383}
+  - component: {fileID: 2032143042020365381}
+  m_Layer: 0
+  m_Name: Player1 input handling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2032143042020365380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032143042020365382}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2032143042020365383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032143042020365382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a56c5392042354bb67334235e85aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys:
+  - {fileID: 11400000, guid: 88cc45e060868074fb428f6eeb2f7e8f, type: 2}
+  - {fileID: 11400000, guid: 5a5983717f9aa3d4f96a7110095f53e3, type: 2}
+  - {fileID: 11400000, guid: 7a20fda9f589fbc4c8e630cbab9835ec, type: 2}
+  - {fileID: 11400000, guid: f0fcdfe1265e29c419949e149ccac138, type: 2}
+  keyPrefab: {fileID: 0}
+  fillBar: {fileID: 0}
+  wrongSprite: {fileID: 21300000, guid: 546589f6c4c3ffa4f99d35cf043fc00f, type: 3}
+  centerSpawnPosition: {fileID: 2032143042020365380}
+  spriteOffset: 100
+  baseInputWindow: 10
+  speedChangeModifier: 0.1
+  speedModifier: 1
+  minQueue: 3
+  maxQueue: 3
+  playerType: Player1
+--- !u!114 &2032143042020365381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032143042020365382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e7eebb71749ff40865a4994f161e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punismentList:
+  - {fileID: 11400000, guid: fd18383e9f2b04940883ca3cdf447151, type: 2}
+  position1: {fileID: 2032143042020365382}
+  position2: {fileID: 0}
+  player1GettingPunished: 0
+  player2GettingPunished: 0
+  player1: Player1
+  player2: Player2
