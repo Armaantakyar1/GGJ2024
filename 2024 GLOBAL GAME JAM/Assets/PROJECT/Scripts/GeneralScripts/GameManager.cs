@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         PlayerDeath.pleaseYouShouldDie += TransitionToGameOverState;
+        Timer.YouLostBitch += TransitionToGameOverState;
         PlayerWinCondition.IdiotHasWon += WinGame;
     }
 
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerDeath.pleaseYouShouldDie -= TransitionToGameOverState;
         PlayerWinCondition.IdiotHasWon -= WinGame;
+        Timer.YouLostBitch -= TransitionToGameOverState;
     }
 
 
