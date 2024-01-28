@@ -6,16 +6,10 @@ public class AnimationAction : MonoBehaviour
 {
     [SerializeField] GameObject itself;
     [SerializeField] PopUpActivator pop;
-    // Start is called before the first frame update
+
     void Start()
     {
         pop = FindObjectOfType<PopUpActivator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void PopUp()
@@ -28,9 +22,9 @@ public class AnimationAction : MonoBehaviour
         Destroy(itself);
     }
 
-    public void DisableObject()
+    public void DisableObject(GameObject themself)
     {
-        itself.SetActive(false);
+        themself.SetActive(false);
     }
 
 }
