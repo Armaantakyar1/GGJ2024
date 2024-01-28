@@ -46,9 +46,8 @@ public class FailureManager : MonoBehaviour
         punismentsType.Prefab.transform.position = position1.transform.position;
         punismentsType.punismentAnimation.SetTrigger(punismentsType.clip.name);
         player1GettingPunished = false;
-
-        yield return new WaitForSeconds(1f);
-        //yield return new WaitForSeconds(punismentsType.clip.length);
+        //yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(punismentsType.clip.length);
     }
     IEnumerator Player2PunishmentSelector()
     {
@@ -57,7 +56,7 @@ public class FailureManager : MonoBehaviour
         punismentsType.Prefab.transform.position = position2.transform.position;
         punismentsType.punismentAnimation.SetTrigger(punismentsType.clip.name);
         player2GettingPunished = false;
-        yield return new WaitForSeconds(1f);
-        //yield return new WaitForSeconds(punismentsType.clip.length);
+        //yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(punismentsType.clip.length);
     }
 }
