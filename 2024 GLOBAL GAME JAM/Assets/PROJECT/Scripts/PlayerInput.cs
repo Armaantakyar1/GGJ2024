@@ -25,7 +25,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] string playerType;
 
     [Header("Audio")]
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSource1;
+    [SerializeField] AudioSource audioSource2;
     [SerializeField] AudioClip correctSound;
     [SerializeField] AudioClip wrongSound;
     [SerializeField] float pitchMod = 0.2f;
@@ -79,7 +80,9 @@ public class PlayerInput : MonoBehaviour
         {
             if (keyQueue.Count == 0)
             {
+                yield return new WaitForSeconds(0.5f / speedModifier);
                 successCounter = 0;
+                audioSource1.pitch = 1f;
                 AddToQueue();
                 SpawnKeys();
             }
@@ -104,7 +107,7 @@ public class PlayerInput : MonoBehaviour
                 }
                 closedKeyList.Clear();
                 keyQueue.Clear();
-                audioSource.PlayOneShot(wrongSound);
+                audioSource2.PlayOneShot(wrongSound);
                 // Fail code here
                 FailedKeyPressed?.Invoke(playerType);
             }
@@ -119,12 +122,14 @@ public class PlayerInput : MonoBehaviour
     {
         if (currentKey != null && Input.GetKeyDown(currentKey.keybind))
         {
-            float pitch = audioSource.pitch;
-            audioSource.pitch += successCounter * pitchMod;
+            audioSource1.pitch = 1 + (successCounter * pitchMod);
+            if (successCounter > 1)
+            {
+                Debug.Log("Gaming");
+            }
             successCounter++;
-            audioSource.clip = correctSound;
-            audioSource.PlayOneShot(correctSound);
-            audioSource.pitch = pitch;
+            audioSource1.clip = correctSound;
+            audioSource1.Play();
             keyQueue[0].gameObject.GetComponent<Image>().sprite = keyQueue[0].activatedSprite;
             Dequeue();
             currentKey = null;
@@ -138,7 +143,7 @@ public class PlayerInput : MonoBehaviour
         else if (currentKey != null && OtherInputsPressed())
         {
             keyQueue[0].gameObject.GetComponent<Image>().sprite = wrongSprite;
-            audioSource.PlayOneShot(wrongSound);
+            audioSource2.PlayOneShot(wrongSound);
             Dequeue();
             FailedKeyPressed?.Invoke(playerType);
             currentKey = null;
