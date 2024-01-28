@@ -39,6 +39,6 @@ public class Timer : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(timeRemaining / 60);
         int seconds = Mathf.FloorToInt(timeRemaining % 60);
-        textMesh.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        textMesh.text = "TIMER " + string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
