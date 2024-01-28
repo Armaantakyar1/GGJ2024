@@ -13,14 +13,15 @@ public class PlayerClimbing : MonoBehaviour
     [Tab("Movement Info")]
     [SerializeField] float duration;
     [SerializeField] AnimationCurve moveCurve;
-    [SerializeField] Vector2 desiredPosition;
+    [SerializeField] Vector3 desiredPosition;
     [SerializeField] float correctOffset;
     [SerializeField] float wrongOffset;
+    [SerializeField] string playerType;
     
 
     [Tab("Debug Info")]
     [SerializeField] float timer;
-    [SerializeField] Vector2 previousDesiredPosition;
+    [SerializeField] Vector3 previousDesiredPosition;
     [SerializeField] bool timerReset;
 
     [Tab("Animation Info")]
@@ -34,17 +35,28 @@ public class PlayerClimbing : MonoBehaviour
         desiredPosition = transform.position;
     }
 
-    [ContextMenu("Climb Up Bitch")]
-    public void ClimbUp()
+    private void OnEnable()
     {
-        desiredPosition = new Vector2(desiredPosition.x, desiredPosition.y + correctOffset);
+        PlayerInput.SuccessBitch += ClimbUp; 
+    }
+
+    private void OnDisable()
+    {
+        PlayerInput.SuccessBitch -= ClimbUp;
+    }
+
+    [ContextMenu("Climb Up Bitch")]
+    public void ClimbUp(string player)
+    {
+        if (player != playerType) return;
+        desiredPosition = new Vector3(desiredPosition.x, desiredPosition.y + correctOffset,transform.position.z);
         playerAnimator.Play(climbClip.name);
     }
 
     [ContextMenu("Get Bonked Bitch")]
     public void ClimbDown()
     {
-        desiredPosition = new Vector2(desiredPosition.x, desiredPosition.y - correctOffset);
+        desiredPosition = new Vector3(desiredPosition.x, desiredPosition.y - correctOffset,transform.position.z);
         playerAnimator.Play(idleClip.name);
     }
 
@@ -58,6 +70,7 @@ public class PlayerClimbing : MonoBehaviour
         if(timer >= duration)
         {
             previousDesiredPosition = desiredPosition;
+
             timerReset = false;
         }
 
@@ -66,7 +79,7 @@ public class PlayerClimbing : MonoBehaviour
             timer += Time.deltaTime;
             float t = timer / duration;
             t = moveCurve.Evaluate(t);
-            transform.position = Vector2.Lerp(previousDesiredPosition, desiredPosition, t);
+            transform.position = Vector3.Lerp(previousDesiredPosition, desiredPosition, t);
         }
     }
 }

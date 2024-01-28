@@ -15,11 +15,6 @@ public class FailureManager : MonoBehaviour
     [SerializeField] string player1;
     [SerializeField] string player2;
 
-    void Start()
-    {
-        // Initialize your punismentList
-    }
-
     private void OnEnable() => PlayerInput.FailedKeyPressed += BeginPunishment;
 
     private void OnDisable() => PlayerInput.FailedKeyPressed -= BeginPunishment;
@@ -44,17 +39,15 @@ public class FailureManager : MonoBehaviour
         Punisments punismentsType = punismentList[Random.Range(0, punismentList.Count)];
         Instantiate(punismentsType.Prefab);
         punismentsType.Prefab.transform.position = position1.transform.position;
+        yield return new WaitForSeconds(punismentsType.clip.length);
         player1GettingPunished = false;
-        yield return new WaitForSeconds(1f);
-        //yield return new WaitForSeconds(punismentsType.clip.length);
     }
     IEnumerator Player2PunishmentSelector()
     {
         Punisments punismentsType = punismentList[Random.Range(0, punismentList.Count)];
         Instantiate(punismentsType.Prefab);
         punismentsType.Prefab.transform.position = position2.transform.position;
+        yield return new WaitForSeconds(punismentsType.clip.length);
         player2GettingPunished = false;
-        yield return new WaitForSeconds(1f);
-        //yield return new WaitForSeconds(punismentsType.clip.length);
     }
 }
