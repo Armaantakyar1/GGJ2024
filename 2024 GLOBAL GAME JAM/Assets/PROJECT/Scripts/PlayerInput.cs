@@ -36,6 +36,7 @@ public class PlayerInput : MonoBehaviour
     List<GameKey> closedKeyList = new();
     GameKey currentKey;
     public static Action<string> FailedKeyPressed;
+    public static Action <string>SuccessBitch;
 
     private void Start()
     {
@@ -143,6 +144,7 @@ public class PlayerInput : MonoBehaviour
             {
                 timer = 0;
                 // Success code here
+                SuccessBitch?.Invoke(playerType);
             }
         }
         else if (currentKey != null && OtherInputsPressed())
