@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7302f4fd93d4e9f469a8cbb14bfebcb6, type: 3}
-  m_Name: Punisments
+  m_Name: Pigman
   m_EditorClassIdentifier: 
   punismentAnimation: {fileID: 0}
-  clip: {fileID: 0}
-  Prefab: {fileID: 133447631875308234, guid: b629fb788b7796b49b9ae543a5b1e545, type: 3}
+  clip: {fileID: 7400000, guid: 77666a991f27d6948b6ca15f66c6aba6, type: 2}
+  Prefab: {fileID: 682705161352813363, guid: 77f0d7e3c6e4ef047bf77ebdcf23bc7f, type: 3}
