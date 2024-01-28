@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationAction : MonoBehaviour
+public class Player2AnimationAction : MonoBehaviour
 {
     [SerializeField] GameObject itself;
-    [SerializeField] PopUpActivator pop;
+    [SerializeField] Player2PopUP secondpop;
 
     void Start()
     {
-        pop = FindObjectOfType<PopUpActivator>();
+        secondpop = FindObjectOfType<Player2PopUP>();
     }
 
     public void PopUp()
     {
-        pop.RandomSelection();
+        secondpop.RandomSelection();
     }
 
     public void RemoveObject()
@@ -26,5 +26,4 @@ public class AnimationAction : MonoBehaviour
     {
         themself.SetActive(false);
     }
-
 }

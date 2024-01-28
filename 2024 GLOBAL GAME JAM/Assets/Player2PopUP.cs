@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-
-public class PopUpActivator : MonoBehaviour
+public class Player2PopUP : MonoBehaviour
 {
     [SerializeField] List<GameObject> popUpList;
 
