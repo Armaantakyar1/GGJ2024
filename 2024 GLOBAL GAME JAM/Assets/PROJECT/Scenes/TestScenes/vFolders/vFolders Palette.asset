@@ -75,26 +75,3 @@ MonoBehaviour:
     - Settings Icon
     customIcons: []
     enabled: 1
-  - builtinIcons: []
-    customIcons:
-    - be8abf3ed47609740b490372ece90428
-    - 546589f6c4c3ffa4f99d35cf043fc00f
-    - 9c63b51755ec8c845b857cc73a35d606
-    - ebd7d20882d5abb42abb240c354a0631
-    - 188dfe7e559f13248ba2c41eb5a59328
-    - 73421ca35940f8344976fe25524953fa
-    - 4a7e6c454e1d78e42af4ef68dbca9f07
-    enabled: 1
-  - builtinIcons: []
-    customIcons:
-    - 0dcefafee79e7de43ad13fab5cdb7135
-    - 2807f87acc0dc464ab05c8a62e42ca29
-    - 7c05578092876a0458b8b480269aef86
-    - e737fd1dd31046c4da43e8ba94fdaf63
-    - 2fd6421f253b4ef1a19526541f9ffc0c
-    - ee148e281f3c41c5b4ff5f8a5afe5a6c
-    - 
-    enabled: 1
-  - builtinIcons: []
-    customIcons: []
-    enabled: 1
