@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("In Game UI")]
     [SerializeField] protected GameObject inGameUI;
+    [SerializeField] protected GameObject theDumbFucks;
     [SerializeField] bool allowToDisableGameUI;
 
 
@@ -42,24 +43,22 @@ public class GameManager : MonoBehaviour
 
     public GameState CurrentGameState = GameState.Start;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
+    
 
+    private void OnEnable()
+    {
+        PlayerDeath.pleaseYouShouldDie += TransitionToGameOverState;
+        PlayerWinCondition.IdiotHasWon += WinGame;
     }
 
-    private void OnEnable() => PlayerDeath.pleaseYouShouldDie += TransitionToGameOverState;
 
-    private void OnDisable() => PlayerDeath.pleaseYouShouldDie -= TransitionToGameOverState;
- 
+    private void OnDisable()
+    {
+        PlayerDeath.pleaseYouShouldDie -= TransitionToGameOverState;
+        PlayerWinCondition.IdiotHasWon -= WinGame;
+    }
+
+
 
     protected virtual void Start()
     {
@@ -78,7 +77,8 @@ public class GameManager : MonoBehaviour
     {
         GameIsStarting?.Invoke();
         DisableAllUI();
-
+        theDumbFucks = FindObjectOfType<DumbFuck>().gameObject;
+        EnableOrDisableUI(ref theDumbFucks,false);
         if (!skipStartMenu)
         {
             EnableOrDisableUI(ref startMenu, true);
@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
         {
             EnableOrDisableUI(ref inGameUI, true);
             EnableOrDisableUI(ref startMenu, false);
+            EnableOrDisableUI(ref theDumbFucks,true);
             Time.timeScale = 1;
             return true;
         }
@@ -171,25 +172,41 @@ public class GameManager : MonoBehaviour
         {
             EnableOrDisableUI(ref inGameUI, false);
             EnableOrDisableUI(ref gameOverMenu, true);
+            EnableOrDisableUI(ref theDumbFucks, false);
             Debug.Log("Game Over");
             return true;
         }
         return false;
     }
 
-    #region Game Manager Helper Functions
-    public static bool IsCurrentState(GameState _state)
+    protected virtual void  WinGame()
     {
-        if (Instance.CurrentGameState == _state)
+        if (runOnce) return;
+
+        if (IsCurrentState(PlayingState))
+        {
+            EnableOrDisableUI(ref inGameUI, false);
+            EnableOrDisableUI(ref winMenu, true);
+            EnableOrDisableUI(ref theDumbFucks, false);
+            Debug.Log("Game Over");
+            return ;
+        }
+        return;
+    }
+
+    #region Game Manager Helper Functions
+    public  bool IsCurrentState(GameState _state)
+    {
+        if (CurrentGameState == _state)
         {
             return true;
         }
         return false;
     }
 
-    public static void UpdateCurrentGameState(GameState _state)
+    public  void UpdateCurrentGameState(GameState _state)
     {
-        Instance.CurrentGameState = _state;
+        CurrentGameState = _state;
         runOnce = false;
     }
 
@@ -212,6 +229,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         skipStartMenu = _skipStartScreen;
+        theDumbFucks = null;
         UpdateCurrentGameState(StartState);
         Start();
     }
