@@ -2085,6 +2085,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actual Dumb Fucks
       objectReference: {fileID: 0}
+    - target: {fileID: 5720365724101289179, guid: 354bf0f3732f4274b9a1f55a76a6cbc6,
+        type: 3}
+      propertyPath: Y_WinThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542796212256927180, guid: 354bf0f3732f4274b9a1f55a76a6cbc6,
+        type: 3}
+      propertyPath: Y_WinThreshold
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 354bf0f3732f4274b9a1f55a76a6cbc6, type: 3}
 --- !u!1 &8164078559808316366

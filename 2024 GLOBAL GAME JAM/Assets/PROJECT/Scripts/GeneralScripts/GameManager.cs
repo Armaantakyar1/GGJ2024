@@ -187,7 +187,8 @@ public class GameManager : MonoBehaviour
 
         if (IsCurrentState(PlayingState))
         {
-            EnableOrDisableUI(ref inGameUI, false);
+            //EnableOrDisableUI(ref inGameUI, false);
+            Destroy(inGameUI);
             EnableOrDisableUI(ref winMenu, true);
             EnableOrDisableUI(ref theDumbFucks, false);
             Debug.Log("Game Over");
