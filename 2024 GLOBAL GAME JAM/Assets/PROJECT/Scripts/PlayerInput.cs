@@ -22,12 +22,19 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] int minQueue = 3;
     [SerializeField] int maxQueue = 3;
     [SerializeField] float maxWidth = 600f;
+    [SerializeField] string playerType;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip correctSound;
+    [SerializeField] AudioClip wrongSound;
+    [SerializeField] float pitchMod = 0.2f;
+
     List<GameKey> keyQueue = new();
     List<KeyCode> keyList = new();
     List<GameKey> closedKeyList = new();
     GameKey currentKey;
     public static Action<string> FailedKeyPressed;
-    [SerializeField] string playerType;
 
     private void Start()
     {
@@ -52,19 +59,14 @@ public class PlayerInput : MonoBehaviour
 
     void SpawnKeys()
     {
-        float totalSize = keyQueue.Count * 50;
-        float offset = spriteOffset;
-        float centerAlignmentOffset = ((totalSize * 2) + (keyQueue.Count * spriteOffset)) / 4; // FUCK
-        if (totalSize + (keyQueue.Count * spriteOffset) > maxWidth)
-        {
-            offset = (maxWidth - (keyQueue.Count * 50)) / keyQueue.Count;
-            centerAlignmentOffset = maxWidth / 4;
-        }
-            centerAlignmentOffset *= -1;
+        HorizontalLayoutGroup group = centerSpawnPosition.GetComponent<HorizontalLayoutGroup>();
+        group.padding.left = (int)((100 * keyQueue.Count) + (group.spacing * (keyQueue.Count - 1)));
+        group.padding.left *= -1;
+        group.padding.left /= 2;
+        group.padding.left += 50;
         for (int i = 0; i < keyQueue.Count; i++)
         {
             keyQueue[i].gameObject = Instantiate(keyPrefab, centerSpawnPosition);
-            keyQueue[i].gameObject.transform.position += new Vector3(centerAlignmentOffset + (i * offset) + (keyQueue[i].gameObject.GetComponent<RectTransform>().rect.width / 2), 0f, 0f);
             keyQueue[i].gameObject.GetComponent<Image>().sprite = keyQueue[i].baseSprite;
         }
     }
@@ -72,10 +74,12 @@ public class PlayerInput : MonoBehaviour
     IEnumerator InputSequence()
     {
         float timer = 0;
+        float successCounter = 0;
         while (true) // Change this to an actual condition later pls
         {
             if (keyQueue.Count == 0)
             {
+                successCounter = 0;
                 AddToQueue();
                 SpawnKeys();
             }
@@ -85,7 +89,7 @@ public class PlayerInput : MonoBehaviour
                 currentKey = keyQueue[0];
             }
 
-            timer = CheckInput(timer);
+            timer = CheckInput(timer, ref successCounter);
 
             if ((baseInputWindow / speedModifier) < timer || keyQueue.Count == 0)
             {
@@ -100,6 +104,7 @@ public class PlayerInput : MonoBehaviour
                 }
                 closedKeyList.Clear();
                 keyQueue.Clear();
+                audioSource.PlayOneShot(wrongSound);
                 // Fail code here
                 FailedKeyPressed?.Invoke(playerType);
             }
@@ -110,10 +115,16 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    private float CheckInput(float timer)
+    private float CheckInput(float timer, ref float successCounter)
     {
         if (currentKey != null && Input.GetKeyDown(currentKey.keybind))
         {
+            float pitch = audioSource.pitch;
+            audioSource.pitch += successCounter * pitchMod;
+            successCounter++;
+            audioSource.clip = correctSound;
+            audioSource.PlayOneShot(correctSound);
+            audioSource.pitch = pitch;
             keyQueue[0].gameObject.GetComponent<Image>().sprite = keyQueue[0].activatedSprite;
             Dequeue();
             currentKey = null;
@@ -127,6 +138,7 @@ public class PlayerInput : MonoBehaviour
         else if (currentKey != null && OtherInputsPressed())
         {
             keyQueue[0].gameObject.GetComponent<Image>().sprite = wrongSprite;
+            audioSource.PlayOneShot(wrongSound);
             Dequeue();
             FailedKeyPressed?.Invoke(playerType);
             currentKey = null;
