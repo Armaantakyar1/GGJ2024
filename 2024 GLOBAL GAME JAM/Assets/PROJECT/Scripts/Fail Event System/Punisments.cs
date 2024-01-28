@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Punisments", menuName = "Punisments")]
 public class Punisments : ScriptableObject
 {
-    Animator punismentAnimation;
-    GameObject Prefab;
+    public Animator punismentAnimation;
+    public AnimationClip clip;
+    public GameObject Prefab;
+
 }

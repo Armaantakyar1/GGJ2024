@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -23,10 +25,12 @@ public class PlayerInput : MonoBehaviour
     List<KeyCode> keyList = new();
     List<GameKey> closedKeyList = new();
     GameKey currentKey;
+    public static Action<string> FailedKeyPressed;
+    [SerializeField] string playerType;
 
     private void Start()
     {
-        foreach(var key in keys)
+        foreach (var key in keys)
         {
             keyList.Add(key.keybind);
         }
@@ -83,6 +87,7 @@ public class PlayerInput : MonoBehaviour
                 }
                 closedKeyList.Clear();
                 // Fail code here
+                FailedKeyPressed?.Invoke(playerType);
             }
 
             timer += Time.deltaTime;
@@ -109,6 +114,7 @@ public class PlayerInput : MonoBehaviour
         {
             keyQueue[0].gameObject.GetComponent<Image>().sprite = wrongSprite;
             Dequeue();
+            FailedKeyPressed?.Invoke(playerType);
             currentKey = null;
             speedModifier -= speedModifier * speedChangeModifier;
         }
