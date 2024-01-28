@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 682705161352813362}
   - component: {fileID: 5123336330866972312}
   m_Layer: 0
-  m_Name: pigman
+  m_Name: 1pigman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,8 +139,8 @@ GameObject:
   m_Component:
   - component: {fileID: 682705162099291105}
   - component: {fileID: 682705162099291118}
-  - component: {fileID: 682705162099291104}
-  - component: {fileID: 2542349425597071394}
+  - component: {fileID: 7082863180016063027}
+  - component: {fileID: 2396645627287869457}
   m_Layer: 0
   m_Name: pig
   m_TagString: Untagged
@@ -215,7 +215,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &682705162099291104
+--- !u!114 &7082863180016063027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682705162099291116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97c292dc5c303449815b8c72c16e867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itself: {fileID: 682705161352813363}
+  secondpop: {fileID: 0}
+--- !u!95 &2396645627287869457
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -225,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 682705162099291116}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54ef1641007fe094bb83447a4b7c760f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7ade17863217342408ef4f7a955de458, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -236,18 +250,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2542349425597071394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682705162099291116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 107b400a81308fd4d80c19dac58fb854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itself: {fileID: 682705162099291116}
-  pop: {fileID: 0}
-  au_clip: {fileID: 0}
