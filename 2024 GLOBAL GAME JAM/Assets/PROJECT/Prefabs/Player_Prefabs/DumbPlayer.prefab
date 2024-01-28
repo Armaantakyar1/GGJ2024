@@ -142,11 +142,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  desiredPosition: {x: 0, y: 10}
+  desiredPosition: {x: 0, y: 10, z: 0}
   correctOffset: 5
   wrongOffset: 2
+  playerType: 
   timer: 0
-  previousDesiredPosition: {x: 0, y: 0}
+  previousDesiredPosition: {x: 0, y: 0, z: 0}
   timerReset: 0
   playerAnimator: {fileID: 3247665002232783330}
   idleClip: {fileID: 7400000, guid: 0506a8bee075ebd46a1cb3f3d800a3e1, type: 2}
