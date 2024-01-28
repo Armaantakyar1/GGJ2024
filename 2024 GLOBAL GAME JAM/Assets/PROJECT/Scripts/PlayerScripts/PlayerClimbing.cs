@@ -38,11 +38,13 @@ public class PlayerClimbing : MonoBehaviour
     private void OnEnable()
     {
         PlayerInput.SuccessBitch += ClimbUp; 
+        PlayerInput.FailedBitch += ClimbDown;
     }
 
     private void OnDisable()
     {
         PlayerInput.SuccessBitch -= ClimbUp;
+        PlayerInput.FailedBitch -= ClimbDown;
     }
 
     [ContextMenu("Climb Up Bitch")]
@@ -54,8 +56,9 @@ public class PlayerClimbing : MonoBehaviour
     }
 
     [ContextMenu("Get Bonked Bitch")]
-    public void ClimbDown()
+    public void ClimbDown(string player)
     {
+        if (player != playerType) return;
         desiredPosition = new Vector3(desiredPosition.x, desiredPosition.y - correctOffset,transform.position.z);
         playerAnimator.Play(idleClip.name);
     }

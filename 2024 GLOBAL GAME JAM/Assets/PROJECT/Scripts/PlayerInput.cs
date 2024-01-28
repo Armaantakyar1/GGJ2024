@@ -37,6 +37,7 @@ public class PlayerInput : MonoBehaviour
     GameKey currentKey;
     public static Action<string> FailedKeyPressed;
     public static Action <string>SuccessBitch;
+    public static Action<string> FailedBitch;
 
     private void Start()
     {
@@ -82,11 +83,13 @@ public class PlayerInput : MonoBehaviour
     {
         float timer = 0;
         float successCounter = 0;
+        int correctInputs = 0;
         while (true) // Change this to an actual condition later pls
         {
             if (keyQueue.Count == 0)
             {
                 yield return new WaitForSeconds(0.5f / speedModifier);
+                correctInputs = 0;
                 successCounter = 0;
                 audioSource1.pitch = 1f;
                 AddToQueue();
@@ -98,9 +101,11 @@ public class PlayerInput : MonoBehaviour
                 currentKey = keyQueue[0];
             }
 
-            timer = CheckInput(timer, ref successCounter);
+            timer = CheckInput(timer, ref successCounter, ref correctInputs);
 
-            if ((baseInputWindow / speedModifier) < timer || keyQueue.Count == 0)
+
+
+            if (keyQueue.Count == 0)
             {
                 timer = 0;
                 foreach (var key in keyQueue)
@@ -111,11 +116,32 @@ public class PlayerInput : MonoBehaviour
                 {
                     Destroy(key.gameObject); // Animation later?
                 }
+
                 closedKeyList.Clear();
                 keyQueue.Clear();
+
+            }
+
+            if ((baseInputWindow / speedModifier) < timer)
+            {
+
+                timer = 0;
+                foreach (var key in keyQueue)
+                {
+                    Destroy(key.gameObject);
+                }
+                foreach (var key in closedKeyList)
+                {
+                    Destroy(key.gameObject); // Animation later?
+                }
+
+                closedKeyList.Clear();
+                keyQueue.Clear();
+
                 audioSource2.PlayOneShot(wrongSound);
                 // Fail code here
                 FailedKeyPressed?.Invoke(playerType);
+                FailedBitch?.Invoke(playerType);
             }
 
             timer += Time.deltaTime;
@@ -124,10 +150,11 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    private float CheckInput(float timer, ref float successCounter)
+    private float CheckInput(float timer, ref float successCounter, ref int correctInputs)
     {
         if (currentKey != null && Input.GetKeyDown(currentKey.keybind))
         {
+            correctInputs++;
             audioSource1.pitch = 1 + (successCounter * pitchMod);
             if (successCounter > 1)
             {
@@ -140,11 +167,11 @@ public class PlayerInput : MonoBehaviour
             Dequeue();
             currentKey = null;
             speedModifier += speedModifier * speedChangeModifier;
-            if (keyQueue.Count == 0)
+            SuccessBitch?.Invoke(playerType);
+            if (keyQueue.Count == 0 && correctInputs == closedKeyList.Count)
             {
                 timer = 0;
-                // Success code here
-                SuccessBitch?.Invoke(playerType);
+                return timer;
             }
         }
         else if (currentKey != null && OtherInputsPressed())
@@ -155,6 +182,8 @@ public class PlayerInput : MonoBehaviour
             FailedKeyPressed?.Invoke(playerType);
             currentKey = null;
             speedModifier -= speedModifier * speedChangeModifier;
+            FailedKeyPressed?.Invoke(playerType);
+            FailedBitch?.Invoke(playerType);
         }
 
         return timer;
