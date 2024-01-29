@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Piano
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: 963f45191cbc3ce4d93fdc4ac5e24d45, type: 2}
-  Prefab: {fileID: 3225447095474230268, guid: c97c8a59c59984f4d97692aa7603c889, type: 3}
+  Prefab: {fileID: 3225447095474230268, guid: 97a12c15f84b88f4cada8896fc556cd5, type: 3}

@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7302f4fd93d4e9f469a8cbb14bfebcb6, type: 3}
   m_Name: Pigman
   m_EditorClassIdentifier: 
-  punismentAnimation: {fileID: 0}
   clip: {fileID: 7400000, guid: 77666a991f27d6948b6ca15f66c6aba6, type: 2}
-  Prefab: {fileID: 682705161352813363, guid: 77f0d7e3c6e4ef047bf77ebdcf23bc7f, type: 3}
+  Prefab: {fileID: 682705161352813363, guid: 1d7199f4e77645b4f8d82c79daad13e1, type: 3}

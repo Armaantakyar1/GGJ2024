@@ -39,13 +39,13 @@ public class PlayerClimbing : MonoBehaviour
     private void OnEnable()
     {
         PlayerInput.SuccessBitch += ClimbUp; 
-        PlayerInput.FailedBitch += ClimbDown;
+        KIllPunishment.GetBonkedBitch += ClimbDown;
     }
 
     private void OnDisable()
     {
         PlayerInput.SuccessBitch -= ClimbUp;
-        PlayerInput.FailedBitch -= ClimbDown;
+        KIllPunishment.GetBonkedBitch -= ClimbDown;
     }
 
     [ContextMenu("Climb Up Bitch")]
@@ -57,9 +57,9 @@ public class PlayerClimbing : MonoBehaviour
     }
 
     [ContextMenu("Get Bonked Bitch")]
-    public void ClimbDown(string player)
+    public void ClimbDown(GameObject player)
     {
-        if (player != playerType) return;
+        if (player != gameObject) return;
         desiredPosition = new Vector3(desiredPosition.x, desiredPosition.y - correctOffset,transform.position.z);
         playerAnimator.Play(bonks[UnityEngine.Random.Range(0, bonks.Length)].name);
     }

@@ -10,8 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 682705161352813362}
   - component: {fileID: 5123336330866972312}
+  - component: {fileID: -2232518627687736034}
+  - component: {fileID: 586547160987910371}
+  - component: {fileID: 437765394719719250}
   m_Layer: 0
-  m_Name: pigman
+  m_Name: 1pigman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682705161352813363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 463.93, y: -2.3576806, z: -4131.17}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44,7 +47,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 294f43236b33f364d861db63f90653ea, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -129,6 +132,56 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &-2232518627687736034
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682705161352813363}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &586547160987910371
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682705161352813363}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.43
+--- !u!114 &437765394719719250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682705161352813363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8de8ac8a82364e48818b1b48472f18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayToDestroy: 1.5
 --- !u!1 &682705162099291116
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682705162099291105}
   - component: {fileID: 682705162099291118}
-  - component: {fileID: 682705162099291104}
-  - component: {fileID: 2542349425597071394}
+  - component: {fileID: 3982730053220446558}
   m_Layer: 0
   m_Name: pig
   m_TagString: Untagged
@@ -156,8 +208,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682705162099291116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07998657, y: -22.45, z: 0}
-  m_LocalScale: {x: 0.85615575, y: 0.85615575, z: 0.85615575}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.85615575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 682705161352813362}
@@ -215,7 +267,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &682705162099291104
+--- !u!95 &3982730053220446558
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -225,7 +277,7 @@ Animator:
   m_GameObject: {fileID: 682705162099291116}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54ef1641007fe094bb83447a4b7c760f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7cf16191efe7ebf43808b852da3051b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -236,17 +288,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2542349425597071394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682705162099291116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 107b400a81308fd4d80c19dac58fb854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itself: {fileID: 682705162099291116}
-  pop: {fileID: 0}

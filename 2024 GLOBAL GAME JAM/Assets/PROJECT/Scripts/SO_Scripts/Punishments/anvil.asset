@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7302f4fd93d4e9f469a8cbb14bfebcb6, type: 3}
-  m_Name: 2thinker
+  m_Name: anvil
   m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: 7a5ba879fc5a1114d803b2782b8011ec, type: 2}
-  Prefab: {fileID: 840113461915729519, guid: de1b1f6cd6da5e349a8669baa063df92, type: 3}
+  clip: {fileID: 0}
+  Prefab: {fileID: 5650525717597656179, guid: 4e21943a811d3604aa83fecaab6b5e21, type: 3}

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7107943717338263229}
   - component: {fileID: 7107943717338263228}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: feedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

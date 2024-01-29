@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Moai
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: d2b3353fed61873449aa84e9bc8f976e, type: 2}
-  Prefab: {fileID: 3036303611755476842, guid: dc7fed6f7bef0474aad4281da7c2014c, type: 3}
+  Prefab: {fileID: 3036303611755476842, guid: bb46aecfeed6ba2428cbdf8a59b473a5, type: 3}

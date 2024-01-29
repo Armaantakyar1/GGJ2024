@@ -22,34 +22,25 @@ public class FailureManager : MonoBehaviour
 
     public void BeginPunishment(string whichPlayer)
     {
-        if (!player1GettingPunished && whichPlayer == player1)
+        if ( whichPlayer == player1)
         {
             player1GettingPunished = true;
-            StartCoroutine(Player1PunishmentSelector());
+            StartCoroutine(PlayerPunishmentSelector(position1.transform.position));
         }
-        if (!player2GettingPunished && whichPlayer == player2)
+        if (whichPlayer == player2)
         {
             player1GettingPunished = true;
-            StartCoroutine(Player2PunishmentSelector());
+            StartCoroutine(PlayerPunishmentSelector(position2.transform.position));
         }
     }
 
 
-    IEnumerator Player1PunishmentSelector()
+    IEnumerator PlayerPunishmentSelector(Vector3 playerPosition)
     {
         Punisments punismentsType = punismentList[Random.Range(0, punismentList.Count)];
-        Instantiate(punismentsType.Prefab);
-        //punismentsType.Prefab.transform.position = position1.transform.position;
+        Instantiate(punismentsType.Prefab,playerPosition, punismentsType.Prefab.transform.rotation);
 
-        yield return new WaitForSeconds(punismentsType.clip.length);
-        player1GettingPunished = false;
+        yield return new WaitForSeconds(1.5f);
     }
-    IEnumerator Player2PunishmentSelector()
-    {
-        Punisments punismentsType = towpunish[Random.Range(0, towpunish.Count)];
-        Instantiate(punismentsType.Prefab);
-        //punismentsType.Prefab.transform.position = position2.transform.position;
-        yield return new WaitForSeconds(punismentsType.clip.length);
-        player2GettingPunished = false;
-    }
+  
 }

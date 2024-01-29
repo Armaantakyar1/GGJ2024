@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Thinker
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: e988783a63cc5d14a9badc09bec51dcf, type: 2}
-  Prefab: {fileID: 840113461915729519, guid: a420107ba87abf14cab31a35d6e4a744, type: 3}
+  Prefab: {fileID: 840113461915729519, guid: de1b1f6cd6da5e349a8669baa063df92, type: 3}

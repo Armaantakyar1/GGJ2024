@@ -12,10 +12,6 @@ public class AnimationAction : MonoBehaviour
         pop = FindObjectOfType<PopUpActivator>();
     }
 
-    public void PopUp()
-    {
-        pop.RandomSelection();
-    }
 
     public void RemoveObject()
     {
