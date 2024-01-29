@@ -929,7 +929,7 @@ MonoBehaviour:
   InitializationMode: 2
   AutoInitialization: 1
   SafeMode: 3
-  Direction: 0
+  Direction: 1
   AutoChangeDirectionOnEnd: 0
   AutoPlayOnStart: 0
   AutoPlayOnEnable: 1
@@ -3424,19 +3424,25 @@ PrefabInstance:
     - target: {fileID: 4475192727302917840, guid: 386c9e2ae28ced64fa98f365e8b3b273,
         type: 3}
       propertyPath: punismentList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4475192727302917840, guid: 386c9e2ae28ced64fa98f365e8b3b273,
         type: 3}
-      propertyPath: punismentList.Array.data[1]
+      propertyPath: punismentList.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 4c5b5d7f5dadf1f489261f8689667ae9,
         type: 2}
     - target: {fileID: 4475192727302917840, guid: 386c9e2ae28ced64fa98f365e8b3b273,
         type: 3}
+      propertyPath: punismentList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f09d636309b42ae48ac5dd858886ded1,
+        type: 2}
+    - target: {fileID: 4475192727302917840, guid: 386c9e2ae28ced64fa98f365e8b3b273,
+        type: 3}
       propertyPath: punismentList.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 458374c259e33da42a82afefe0cb679b,
+      objectReference: {fileID: 11400000, guid: f09d636309b42ae48ac5dd858886ded1,
         type: 2}
     - target: {fileID: 4475192727302917840, guid: 386c9e2ae28ced64fa98f365e8b3b273,
         type: 3}
