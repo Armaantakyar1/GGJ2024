@@ -152,6 +152,12 @@ MonoBehaviour:
   playerAnimator: {fileID: 3247665002232783330}
   idleClip: {fileID: 7400000, guid: 0506a8bee075ebd46a1cb3f3d800a3e1, type: 2}
   climbClip: {fileID: 7400000, guid: 7210ebc76c7c2134eafb242285767621, type: 2}
+  bonks:
+  - {fileID: 7400000, guid: 04c593b972cfeaf46855261bfb1f921e, type: 2}
+  - {fileID: 7400000, guid: 06a8cfb2b8246664ebaee4c40654093c, type: 2}
+  - {fileID: 7400000, guid: 75e758d79392d0a46b6215f9b76a54a2, type: 2}
+  - {fileID: 7400000, guid: 0a9825ef14d546f46bc2472a07b9bf3f, type: 2}
+  - {fileID: 7400000, guid: 5b4f5dfbd1841d346b804d1d4e502f60, type: 2}
 --- !u!95 &3247665002232783330
 Animator:
   serializedVersion: 5
