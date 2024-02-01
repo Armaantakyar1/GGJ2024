@@ -468,6 +468,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238628469207990890, guid: 3087d42364c9b0d4fb7a6fca8be11db9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 581942869737801203, guid: 3087d42364c9b0d4fb7a6fca8be11db9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1966459674120156067, guid: 3087d42364c9b0d4fb7a6fca8be11db9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -788,6 +798,11 @@ PrefabInstance:
       value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 7991399819864516805, guid: 3087d42364c9b0d4fb7a6fca8be11db9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325478244767015174, guid: 3087d42364c9b0d4fb7a6fca8be11db9,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2341,6 +2356,11 @@ PrefabInstance:
       propertyPath: speedModifier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1530846406120617371, guid: 1dfeb32696ef0304797f400f47e7d6f5,
+        type: 3}
+      propertyPath: speedChangeModifier
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1729225427321104562, guid: 1dfeb32696ef0304797f400f47e7d6f5,
         type: 3}
       propertyPath: m_Color.b
@@ -2445,6 +2465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speedModifier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416050996996365442, guid: 1dfeb32696ef0304797f400f47e7d6f5,
+        type: 3}
+      propertyPath: speedChangeModifier
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dfeb32696ef0304797f400f47e7d6f5, type: 3}
